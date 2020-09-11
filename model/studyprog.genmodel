@@ -15,6 +15,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyprog.ecore#//Programme/specializations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyprog.ecore#//Programme/semesters"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprog.ecore#//Programme/neededCredits"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprog.ecore#//Programme/totalSemesters"/>
     </genClasses>
     <genClasses ecoreClass="studyprog.ecore#//Specialization">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprog.ecore#//Specialization/specializationName"/>

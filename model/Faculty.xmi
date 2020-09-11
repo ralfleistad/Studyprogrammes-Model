@@ -7,7 +7,8 @@
     xsi:schemaLocation="platform:/plugin/assignment.studyprog.model/model/studyprog.ecore studyprog.ecore">
   <programmes
       programmeName="Informatics"
-      neededCredits="120">
+      neededCredits="120"
+      totalSemesters="4">
     <specializations
         specializationName="Software Engineering ">
       <semesters
@@ -32,7 +33,5 @@
       <semesters
           semesterNum="4"/>
     </specializations>
-    <semesters
-        semesterNum="5"/>
   </programmes>
 </studyprog:Faculty>
