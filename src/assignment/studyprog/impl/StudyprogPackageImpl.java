@@ -12,11 +12,13 @@ import assignment.studyprog.Specialization;
 import assignment.studyprog.StudyprogFactory;
 import assignment.studyprog.StudyprogPackage;
 
+import assignment.studyprog.util.StudyprogValidator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 /**
@@ -127,6 +129,15 @@ public class StudyprogPackageImpl extends EPackageImpl implements StudyprogPacka
 
 		// Initialize created meta-data
 		theStudyprogPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theStudyprogPackage,
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return StudyprogValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theStudyprogPackage.freeze();
@@ -466,6 +477,26 @@ public class StudyprogPackageImpl extends EPackageImpl implements StudyprogPacka
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";
+		addAnnotation
+		  (semesterEClass,
+		   source,
+		   new String[] {
+			   "constraints", "haveEnoughCredits"
+		   });
 	}
 
 } //StudyprogPackageImpl
