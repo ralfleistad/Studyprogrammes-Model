@@ -154,16 +154,6 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	protected static final int END_YEAR_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getEndYear() <em>End Year</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEndYear()
-	 * @generated
-	 * @ordered
-	 */
-	protected int endYear = END_YEAR_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -293,22 +283,13 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public int getEndYear() {
-		return endYear;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setEndYear(int newEndYear) {
-		int oldEndYear = endYear;
-		endYear = newEndYear;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StudyprogPackage.PROGRAMME__END_YEAR, oldEndYear, endYear));
+		// TODO: implement this method to return the 'End Year' attribute
+		// Ensure that you remove @generated or mark it @generated NOT
+		
+		return this.startYear + (this.totalSemesters / 2);
 	}
 
 	/**
@@ -382,9 +363,6 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 			case StudyprogPackage.PROGRAMME__START_YEAR:
 				setStartYear((Integer)newValue);
 				return;
-			case StudyprogPackage.PROGRAMME__END_YEAR:
-				setEndYear((Integer)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -415,9 +393,6 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 			case StudyprogPackage.PROGRAMME__START_YEAR:
 				setStartYear(START_YEAR_EDEFAULT);
 				return;
-			case StudyprogPackage.PROGRAMME__END_YEAR:
-				setEndYear(END_YEAR_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -443,7 +418,7 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 			case StudyprogPackage.PROGRAMME__START_YEAR:
 				return startYear != START_YEAR_EDEFAULT;
 			case StudyprogPackage.PROGRAMME__END_YEAR:
-				return endYear != END_YEAR_EDEFAULT;
+				return getEndYear() != END_YEAR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -466,8 +441,6 @@ public class ProgrammeImpl extends MinimalEObjectImpl.Container implements Progr
 		result.append(totalSemesters);
 		result.append(", startYear: ");
 		result.append(startYear);
-		result.append(", endYear: ");
-		result.append(endYear);
 		result.append(')');
 		return result.toString();
 	}

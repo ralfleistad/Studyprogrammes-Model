@@ -147,21 +147,10 @@ public interface Programme extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>End Year</em>' attribute.
-	 * @see #setEndYear(int)
 	 * @see assignment.studyprog.StudyprogPackage#getProgramme_EndYear()
-	 * @model derived="true"
+	 * @model transient="true" changeable="false" volatile="true" derived="true"
 	 * @generated
 	 */
 	int getEndYear();
-
-	/**
-	 * Sets the value of the '{@link assignment.studyprog.Programme#getEndYear <em>End Year</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>End Year</em>' attribute.
-	 * @see #getEndYear()
-	 * @generated
-	 */
-	void setEndYear(int value);
 
 } // Programme
