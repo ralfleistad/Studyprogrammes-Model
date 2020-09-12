@@ -6,6 +6,6 @@ The structure of this project is more or less identical to the structure of the 
 The model contains studyprogrammes, specializations, semesters and courses. Additionally there are implemented constraints using both OCL and by manually writing.
 Per definition of the assignment I've also used a EDataType for *courseCode* and a derivied feature to compute graduation year.
 
-[This is the EMF ecore model at the time of submitting](https://imgur.com/a/E1z9usH)
+![This is the EMF ecore model at the time of submitting](https://imgur.com/a/E1z9usH)
 
 
