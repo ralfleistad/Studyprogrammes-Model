@@ -17,17 +17,18 @@
       <details key="programmeHasEnoughSemesters" value="self.specializations.semesters->size() + self.semesters->size() = self.totalSemesters"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="programmeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specializations" upperBound="-1"
-        eType="#//Specialization" containment="true" eOpposite="#//Specialization/specializations"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" upperBound="6"
         eType="#//Semester" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="specializations" upperBound="-1"
+        eType="#//Specialization" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="neededCredits" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="totalSemesters" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startYear" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="endYear" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Specialization">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="specializationName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="specializations" eType="#//Programme"
-        eOpposite="#//Programme/specializations"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="semesters" lowerBound="4"
         upperBound="6" eType="#//Semester" containment="true"/>
   </eClassifiers>
@@ -43,11 +44,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Course" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="courseName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="courseCode" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="courseCode" eType="#//courseCode"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="courseCredit" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="courseDescription" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="courseGroup" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="courseCode" instanceClassName="java.lang.String"/>
   <eClassifiers xsi:type="ecore:EClass" name="MandatoryCourse" eSuperTypes="#//Course"/>
   <eClassifiers xsi:type="ecore:EClass" name="ElectiveCourse" eSuperTypes="#//Course"/>
 </ecore:EPackage>

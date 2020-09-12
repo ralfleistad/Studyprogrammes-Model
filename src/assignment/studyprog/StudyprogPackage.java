@@ -4,6 +4,7 @@ package assignment.studyprog;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see assignment.studyprog.StudyprogFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore validationDelegates='http://www.eclipse.org/acceleo/query/1.0'"
  * @generated
  */
 public interface StudyprogPackage extends EPackage {
@@ -113,22 +115,22 @@ public interface StudyprogPackage extends EPackage {
 	int PROGRAMME__PROGRAMME_NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Specializations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROGRAMME__SPECIALIZATIONS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Semesters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME__SEMESTERS = 2;
+	int PROGRAMME__SEMESTERS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Specializations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME__SPECIALIZATIONS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Needed Credits</b></em>' attribute.
@@ -140,13 +142,40 @@ public interface StudyprogPackage extends EPackage {
 	int PROGRAMME__NEEDED_CREDITS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Total Semesters</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME__TOTAL_SEMESTERS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Start Year</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME__START_YEAR = 5;
+
+	/**
+	 * The feature id for the '<em><b>End Year</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROGRAMME__END_YEAR = 6;
+
+	/**
 	 * The number of structural features of the '<em>Programme</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROGRAMME_FEATURE_COUNT = 4;
+	int PROGRAMME_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Programme</em>' class.
@@ -177,22 +206,13 @@ public interface StudyprogPackage extends EPackage {
 	int SPECIALIZATION__SPECIALIZATION_NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Specializations</b></em>' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SPECIALIZATION__SPECIALIZATIONS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Semesters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALIZATION__SEMESTERS = 2;
+	int SPECIALIZATION__SEMESTERS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Specialization</em>' class.
@@ -201,7 +221,7 @@ public interface StudyprogPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SPECIALIZATION_FEATURE_COUNT = 3;
+	int SPECIALIZATION_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Specialization</em>' class.
@@ -488,6 +508,17 @@ public interface StudyprogPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '<em>course Code</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.lang.String
+	 * @see assignment.studyprog.impl.StudyprogPackageImpl#getcourseCode()
+	 * @generated
+	 */
+	int COURSE_CODE = 7;
+
+
+	/**
 	 * Returns the meta object for class '{@link assignment.studyprog.Faculty <em>Faculty</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -563,6 +594,39 @@ public interface StudyprogPackage extends EPackage {
 	EAttribute getProgramme_NeededCredits();
 
 	/**
+	 * Returns the meta object for the attribute '{@link assignment.studyprog.Programme#getTotalSemesters <em>Total Semesters</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Total Semesters</em>'.
+	 * @see assignment.studyprog.Programme#getTotalSemesters()
+	 * @see #getProgramme()
+	 * @generated
+	 */
+	EAttribute getProgramme_TotalSemesters();
+
+	/**
+	 * Returns the meta object for the attribute '{@link assignment.studyprog.Programme#getStartYear <em>Start Year</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start Year</em>'.
+	 * @see assignment.studyprog.Programme#getStartYear()
+	 * @see #getProgramme()
+	 * @generated
+	 */
+	EAttribute getProgramme_StartYear();
+
+	/**
+	 * Returns the meta object for the attribute '{@link assignment.studyprog.Programme#getEndYear <em>End Year</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>End Year</em>'.
+	 * @see assignment.studyprog.Programme#getEndYear()
+	 * @see #getProgramme()
+	 * @generated
+	 */
+	EAttribute getProgramme_EndYear();
+
+	/**
 	 * Returns the meta object for class '{@link assignment.studyprog.Specialization <em>Specialization</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -582,17 +646,6 @@ public interface StudyprogPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSpecialization_SpecializationName();
-
-	/**
-	 * Returns the meta object for the container reference '{@link assignment.studyprog.Specialization#getSpecializations <em>Specializations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Specializations</em>'.
-	 * @see assignment.studyprog.Specialization#getSpecializations()
-	 * @see #getSpecialization()
-	 * @generated
-	 */
-	EReference getSpecialization_Specializations();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link assignment.studyprog.Specialization#getSemesters <em>Semesters</em>}'.
@@ -734,6 +787,17 @@ public interface StudyprogPackage extends EPackage {
 	EClass getElectiveCourse();
 
 	/**
+	 * Returns the meta object for data type '{@link java.lang.String <em>course Code</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>course Code</em>'.
+	 * @see java.lang.String
+	 * @model instanceClass="java.lang.String"
+	 * @generated
+	 */
+	EDataType getcourseCode();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -817,6 +881,30 @@ public interface StudyprogPackage extends EPackage {
 		EAttribute PROGRAMME__NEEDED_CREDITS = eINSTANCE.getProgramme_NeededCredits();
 
 		/**
+		 * The meta object literal for the '<em><b>Total Semesters</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROGRAMME__TOTAL_SEMESTERS = eINSTANCE.getProgramme_TotalSemesters();
+
+		/**
+		 * The meta object literal for the '<em><b>Start Year</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROGRAMME__START_YEAR = eINSTANCE.getProgramme_StartYear();
+
+		/**
+		 * The meta object literal for the '<em><b>End Year</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROGRAMME__END_YEAR = eINSTANCE.getProgramme_EndYear();
+
+		/**
 		 * The meta object literal for the '{@link assignment.studyprog.impl.SpecializationImpl <em>Specialization</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -833,14 +921,6 @@ public interface StudyprogPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SPECIALIZATION__SPECIALIZATION_NAME = eINSTANCE.getSpecialization_SpecializationName();
-
-		/**
-		 * The meta object literal for the '<em><b>Specializations</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SPECIALIZATION__SPECIALIZATIONS = eINSTANCE.getSpecialization_Specializations();
 
 		/**
 		 * The meta object literal for the '<em><b>Semesters</b></em>' containment reference list feature.
@@ -953,6 +1033,16 @@ public interface StudyprogPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ELECTIVE_COURSE = eINSTANCE.getElectiveCourse();
+
+		/**
+		 * The meta object literal for the '<em>course Code</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.lang.String
+		 * @see assignment.studyprog.impl.StudyprogPackageImpl#getcourseCode()
+		 * @generated
+		 */
+		EDataType COURSE_CODE = eINSTANCE.getcourseCode();
 
 	}
 

@@ -7,19 +7,21 @@
   <foreignModel>studyprog.ecore</foreignModel>
   <genPackages prefix="Studyprog" basePackage="assignment" disposableProviderFactory="true"
       ecorePackage="studyprog.ecore#/">
+    <genDataTypes ecoreDataType="studyprog.ecore#//courseCode"/>
     <genClasses ecoreClass="studyprog.ecore#//Faculty">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyprog.ecore#//Faculty/programmes"/>
     </genClasses>
     <genClasses ecoreClass="studyprog.ecore#//Programme">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprog.ecore#//Programme/programmeName"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyprog.ecore#//Programme/specializations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyprog.ecore#//Programme/semesters"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyprog.ecore#//Programme/specializations"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprog.ecore#//Programme/neededCredits"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprog.ecore#//Programme/totalSemesters"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprog.ecore#//Programme/startYear"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprog.ecore#//Programme/endYear"/>
     </genClasses>
     <genClasses ecoreClass="studyprog.ecore#//Specialization">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute studyprog.ecore#//Specialization/specializationName"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference studyprog.ecore#//Specialization/specializations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference studyprog.ecore#//Specialization/semesters"/>
     </genClasses>
     <genClasses ecoreClass="studyprog.ecore#//Semester">

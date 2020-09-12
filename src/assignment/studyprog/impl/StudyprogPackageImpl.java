@@ -15,6 +15,7 @@ import assignment.studyprog.StudyprogPackage;
 import assignment.studyprog.util.StudyprogValidator;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -76,6 +77,13 @@ public class StudyprogPackageImpl extends EPackageImpl implements StudyprogPacka
 	 * @generated
 	 */
 	private EClass electiveCourseEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType courseCodeEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -189,7 +197,7 @@ public class StudyprogPackageImpl extends EPackageImpl implements StudyprogPacka
 	 * @generated
 	 */
 	public EReference getProgramme_Specializations() {
-		return (EReference)programmeEClass.getEStructuralFeatures().get(1);
+		return (EReference)programmeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -198,7 +206,7 @@ public class StudyprogPackageImpl extends EPackageImpl implements StudyprogPacka
 	 * @generated
 	 */
 	public EReference getProgramme_Semesters() {
-		return (EReference)programmeEClass.getEStructuralFeatures().get(2);
+		return (EReference)programmeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -208,6 +216,33 @@ public class StudyprogPackageImpl extends EPackageImpl implements StudyprogPacka
 	 */
 	public EAttribute getProgramme_NeededCredits() {
 		return (EAttribute)programmeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getProgramme_TotalSemesters() {
+		return (EAttribute)programmeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getProgramme_StartYear() {
+		return (EAttribute)programmeEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getProgramme_EndYear() {
+		return (EAttribute)programmeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -233,17 +268,8 @@ public class StudyprogPackageImpl extends EPackageImpl implements StudyprogPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSpecialization_Specializations() {
-		return (EReference)specializationEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getSpecialization_Semesters() {
-		return (EReference)specializationEClass.getEStructuralFeatures().get(2);
+		return (EReference)specializationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -359,6 +385,15 @@ public class StudyprogPackageImpl extends EPackageImpl implements StudyprogPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getcourseCode() {
+		return courseCodeEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public StudyprogFactory getStudyprogFactory() {
 		return (StudyprogFactory)getEFactoryInstance();
 	}
@@ -387,13 +422,15 @@ public class StudyprogPackageImpl extends EPackageImpl implements StudyprogPacka
 
 		programmeEClass = createEClass(PROGRAMME);
 		createEAttribute(programmeEClass, PROGRAMME__PROGRAMME_NAME);
-		createEReference(programmeEClass, PROGRAMME__SPECIALIZATIONS);
 		createEReference(programmeEClass, PROGRAMME__SEMESTERS);
+		createEReference(programmeEClass, PROGRAMME__SPECIALIZATIONS);
 		createEAttribute(programmeEClass, PROGRAMME__NEEDED_CREDITS);
+		createEAttribute(programmeEClass, PROGRAMME__TOTAL_SEMESTERS);
+		createEAttribute(programmeEClass, PROGRAMME__START_YEAR);
+		createEAttribute(programmeEClass, PROGRAMME__END_YEAR);
 
 		specializationEClass = createEClass(SPECIALIZATION);
 		createEAttribute(specializationEClass, SPECIALIZATION__SPECIALIZATION_NAME);
-		createEReference(specializationEClass, SPECIALIZATION__SPECIALIZATIONS);
 		createEReference(specializationEClass, SPECIALIZATION__SEMESTERS);
 
 		semesterEClass = createEClass(SEMESTER);
@@ -411,6 +448,9 @@ public class StudyprogPackageImpl extends EPackageImpl implements StudyprogPacka
 		mandatoryCourseEClass = createEClass(MANDATORY_COURSE);
 
 		electiveCourseEClass = createEClass(ELECTIVE_COURSE);
+
+		// Create data types
+		courseCodeEDataType = createEDataType(COURSE_CODE);
 	}
 
 	/**
@@ -450,13 +490,15 @@ public class StudyprogPackageImpl extends EPackageImpl implements StudyprogPacka
 
 		initEClass(programmeEClass, Programme.class, "Programme", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProgramme_ProgrammeName(), ecorePackage.getEString(), "programmeName", null, 0, 1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getProgramme_Specializations(), this.getSpecialization(), this.getSpecialization_Specializations(), "specializations", null, 0, -1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProgramme_Semesters(), this.getSemester(), null, "semesters", null, 0, 6, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProgramme_Specializations(), this.getSpecialization(), null, "specializations", null, 0, -1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getProgramme_NeededCredits(), ecorePackage.getEInt(), "neededCredits", null, 0, 1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProgramme_TotalSemesters(), ecorePackage.getEInt(), "totalSemesters", null, 0, 1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProgramme_StartYear(), ecorePackage.getEInt(), "startYear", null, 0, 1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProgramme_EndYear(), ecorePackage.getEInt(), "endYear", null, 0, 1, Programme.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
 
 		initEClass(specializationEClass, Specialization.class, "Specialization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSpecialization_SpecializationName(), ecorePackage.getEString(), "specializationName", null, 0, 1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSpecialization_Specializations(), this.getProgramme(), this.getProgramme_Specializations(), "specializations", null, 0, 1, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSpecialization_Semesters(), this.getSemester(), null, "semesters", null, 4, 6, Specialization.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(semesterEClass, Semester.class, "Semester", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -466,7 +508,7 @@ public class StudyprogPackageImpl extends EPackageImpl implements StudyprogPacka
 
 		initEClass(courseEClass, Course.class, "Course", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCourse_CourseName(), ecorePackage.getEString(), "courseName", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCourse_CourseCode(), ecorePackage.getEString(), "courseCode", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCourse_CourseCode(), this.getcourseCode(), "courseCode", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_CourseCredit(), ecorePackage.getEDouble(), "courseCredit", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_CourseDescription(), ecorePackage.getEString(), "courseDescription", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getCourse_CourseGroup(), ecorePackage.getEString(), "courseGroup", null, 0, 1, Course.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -475,12 +517,17 @@ public class StudyprogPackageImpl extends EPackageImpl implements StudyprogPacka
 
 		initEClass(electiveCourseEClass, ElectiveCourse.class, "ElectiveCourse", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		// Initialize data types
+		initEDataType(courseCodeEDataType, String.class, "courseCode", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+
 		// Create resource
 		createResource(eNS_URI);
 
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// http://www.eclipse.org/acceleo/query/1.0
+		create_1Annotations();
 	}
 
 	/**
@@ -492,10 +539,38 @@ public class StudyprogPackageImpl extends EPackageImpl implements StudyprogPacka
 	protected void createEcoreAnnotations() {
 		String source = "http://www.eclipse.org/emf/2002/Ecore";
 		addAnnotation
+		  (this,
+		   source,
+		   new String[] {
+			   "validationDelegates", "http://www.eclipse.org/acceleo/query/1.0"
+		   });
+		addAnnotation
+		  (programmeEClass,
+		   source,
+		   new String[] {
+			   "constraints", "programmeHasEnoughSemesters"
+		   });
+		addAnnotation
 		  (semesterEClass,
 		   source,
 		   new String[] {
 			   "constraints", "haveEnoughCredits"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/acceleo/query/1.0</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void create_1Annotations() {
+		String source = "http://www.eclipse.org/acceleo/query/1.0";
+		addAnnotation
+		  (programmeEClass,
+		   source,
+		   new String[] {
+			   "programmeHasEnoughSemesters", "self.specializations.semesters->size() + self.semesters->size() = self.totalSemesters"
 		   });
 	}
 

@@ -5,6 +5,7 @@ package assignment.studyprog.impl;
 import assignment.studyprog.*;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -72,6 +73,36 @@ public class StudyprogFactoryImpl extends EFactoryImpl implements StudyprogFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case StudyprogPackage.COURSE_CODE:
+				return createcourseCodeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case StudyprogPackage.COURSE_CODE:
+				return convertcourseCodeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Faculty createFaculty() {
 		FacultyImpl faculty = new FacultyImpl();
 		return faculty;
@@ -125,6 +156,29 @@ public class StudyprogFactoryImpl extends EFactoryImpl implements StudyprogFacto
 	public ElectiveCourse createElectiveCourse() {
 		ElectiveCourseImpl electiveCourse = new ElectiveCourseImpl();
 		return electiveCourse;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String createcourseCodeFromString(EDataType eDataType, String initialValue) {
+		
+		if(!initialValue.matches("\\p{L}+\\d+")) {
+			throw new IllegalArgumentException("Course code must have the format [letters[digits]");
+		}
+		
+		return (String)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String convertcourseCodeToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

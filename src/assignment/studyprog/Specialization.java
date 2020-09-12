@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link assignment.studyprog.Specialization#getSpecializationName <em>Specialization Name</em>}</li>
- *   <li>{@link assignment.studyprog.Specialization#getSpecializations <em>Specializations</em>}</li>
  *   <li>{@link assignment.studyprog.Specialization#getSemesters <em>Semesters</em>}</li>
  * </ul>
  *
@@ -46,30 +45,6 @@ public interface Specialization extends EObject {
 	 * @generated
 	 */
 	void setSpecializationName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Specializations</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link assignment.studyprog.Programme#getSpecializations <em>Specializations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Specializations</em>' container reference.
-	 * @see #setSpecializations(Programme)
-	 * @see assignment.studyprog.StudyprogPackage#getSpecialization_Specializations()
-	 * @see assignment.studyprog.Programme#getSpecializations
-	 * @model opposite="specializations" transient="false"
-	 * @generated
-	 */
-	Programme getSpecializations();
-
-	/**
-	 * Sets the value of the '{@link assignment.studyprog.Specialization#getSpecializations <em>Specializations</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Specializations</em>' container reference.
-	 * @see #getSpecializations()
-	 * @generated
-	 */
-	void setSpecializations(Programme value);
 
 	/**
 	 * Returns the value of the '<em><b>Semesters</b></em>' containment reference list.

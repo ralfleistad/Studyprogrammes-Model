@@ -2,7 +2,6 @@
  */
 package assignment.studyprog.impl;
 
-import assignment.studyprog.Programme;
 import assignment.studyprog.Semester;
 import assignment.studyprog.Specialization;
 import assignment.studyprog.StudyprogPackage;
@@ -21,7 +20,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -33,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link assignment.studyprog.impl.SpecializationImpl#getSpecializationName <em>Specialization Name</em>}</li>
- *   <li>{@link assignment.studyprog.impl.SpecializationImpl#getSpecializations <em>Specializations</em>}</li>
  *   <li>{@link assignment.studyprog.impl.SpecializationImpl#getSemesters <em>Semesters</em>}</li>
  * </ul>
  *
@@ -115,47 +112,6 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Programme getSpecializations() {
-		if (eContainerFeatureID() != StudyprogPackage.SPECIALIZATION__SPECIALIZATIONS) return null;
-		return (Programme)eInternalContainer();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetSpecializations(Programme newSpecializations, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newSpecializations, StudyprogPackage.SPECIALIZATION__SPECIALIZATIONS, msgs);
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSpecializations(Programme newSpecializations) {
-		if (newSpecializations != eInternalContainer() || (eContainerFeatureID() != StudyprogPackage.SPECIALIZATION__SPECIALIZATIONS && newSpecializations != null)) {
-			if (EcoreUtil.isAncestor(this, newSpecializations))
-				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
-				msgs = eBasicRemoveFromContainer(msgs);
-			if (newSpecializations != null)
-				msgs = ((InternalEObject)newSpecializations).eInverseAdd(this, StudyprogPackage.PROGRAMME__SPECIALIZATIONS, Programme.class, msgs);
-			msgs = basicSetSpecializations(newSpecializations, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, StudyprogPackage.SPECIALIZATION__SPECIALIZATIONS, newSpecializations, newSpecializations));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Semester> getSemesters() {
 		if (semesters == null) {
 			semesters = new EObjectContainmentEList<Semester>(Semester.class, this, StudyprogPackage.SPECIALIZATION__SEMESTERS);
@@ -169,26 +125,8 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case StudyprogPackage.SPECIALIZATION__SPECIALIZATIONS:
-				if (eInternalContainer() != null)
-					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetSpecializations((Programme)otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case StudyprogPackage.SPECIALIZATION__SPECIALIZATIONS:
-				return basicSetSpecializations(null, msgs);
 			case StudyprogPackage.SPECIALIZATION__SEMESTERS:
 				return ((InternalEList<?>)getSemesters()).basicRemove(otherEnd, msgs);
 		}
@@ -201,26 +139,10 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
-		switch (eContainerFeatureID()) {
-			case StudyprogPackage.SPECIALIZATION__SPECIALIZATIONS:
-				return eInternalContainer().eInverseRemove(this, StudyprogPackage.PROGRAMME__SPECIALIZATIONS, Programme.class, msgs);
-		}
-		return super.eBasicRemoveFromContainerFeature(msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case StudyprogPackage.SPECIALIZATION__SPECIALIZATION_NAME:
 				return getSpecializationName();
-			case StudyprogPackage.SPECIALIZATION__SPECIALIZATIONS:
-				return getSpecializations();
 			case StudyprogPackage.SPECIALIZATION__SEMESTERS:
 				return getSemesters();
 		}
@@ -238,9 +160,6 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 			case StudyprogPackage.SPECIALIZATION__SPECIALIZATION_NAME:
 				setSpecializationName((String)newValue);
-				return;
-			case StudyprogPackage.SPECIALIZATION__SPECIALIZATIONS:
-				setSpecializations((Programme)newValue);
 				return;
 			case StudyprogPackage.SPECIALIZATION__SEMESTERS:
 				getSemesters().clear();
@@ -261,9 +180,6 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 			case StudyprogPackage.SPECIALIZATION__SPECIALIZATION_NAME:
 				setSpecializationName(SPECIALIZATION_NAME_EDEFAULT);
 				return;
-			case StudyprogPackage.SPECIALIZATION__SPECIALIZATIONS:
-				setSpecializations((Programme)null);
-				return;
 			case StudyprogPackage.SPECIALIZATION__SEMESTERS:
 				getSemesters().clear();
 				return;
@@ -281,8 +197,6 @@ public class SpecializationImpl extends MinimalEObjectImpl.Container implements 
 		switch (featureID) {
 			case StudyprogPackage.SPECIALIZATION__SPECIALIZATION_NAME:
 				return SPECIALIZATION_NAME_EDEFAULT == null ? specializationName != null : !SPECIALIZATION_NAME_EDEFAULT.equals(specializationName);
-			case StudyprogPackage.SPECIALIZATION__SPECIALIZATIONS:
-				return getSpecializations() != null;
 			case StudyprogPackage.SPECIALIZATION__SEMESTERS:
 				return semesters != null && !semesters.isEmpty();
 		}

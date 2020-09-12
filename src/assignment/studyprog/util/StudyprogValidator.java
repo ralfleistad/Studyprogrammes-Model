@@ -100,6 +100,8 @@ public class StudyprogValidator extends EObjectValidator {
 				return validateMandatoryCourse((MandatoryCourse)value, diagnostics, context);
 			case StudyprogPackage.ELECTIVE_COURSE:
 				return validateElectiveCourse((ElectiveCourse)value, diagnostics, context);
+			case StudyprogPackage.COURSE_CODE:
+				return validatecourseCode((String)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -120,7 +122,46 @@ public class StudyprogValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateProgramme(Programme programme, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(programme, diagnostics, context);
+		if (!validate_NoCircularContainment(programme, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(programme, diagnostics, context);
+		if (result || diagnostics != null) result &= validateProgramme_programmeHasEnoughSemesters(programme, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the programmeHasEnoughSemesters constraint of '<em>Programme</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String PROGRAMME__PROGRAMME_HAS_ENOUGH_SEMESTERS__EEXPRESSION = "self.specializations.semesters->size() + self.semesters->size() = self.totalSemesters";
+
+	/**
+	 * Validates the programmeHasEnoughSemesters constraint of '<em>Programme</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateProgramme_programmeHasEnoughSemesters(Programme programme, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(StudyprogPackage.Literals.PROGRAMME,
+				 programme,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/acceleo/query/1.0",
+				 "programmeHasEnoughSemesters",
+				 PROGRAMME__PROGRAMME_HAS_ENOUGH_SEMESTERS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -216,6 +257,15 @@ public class StudyprogValidator extends EObjectValidator {
 	 */
 	public boolean validateElectiveCourse(ElectiveCourse electiveCourse, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(electiveCourse, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatecourseCode(String courseCode, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
 	}
 
 	/**

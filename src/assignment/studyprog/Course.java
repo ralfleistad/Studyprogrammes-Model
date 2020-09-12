@@ -54,7 +54,7 @@ public interface Course extends EObject {
 	 * @return the value of the '<em>Course Code</em>' attribute.
 	 * @see #setCourseCode(String)
 	 * @see assignment.studyprog.StudyprogPackage#getCourse_CourseCode()
-	 * @model
+	 * @model dataType="assignment.studyprog.courseCode"
 	 * @generated
 	 */
 	String getCourseCode();
