@@ -201,10 +201,6 @@ public class StudyprogValidator extends EObjectValidator {
 	 * @generated NOT
 	 */
 	public boolean validateSemester_haveEnoughCredits(Semester semester, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO implement the constraint
-		// -> specify the condition that violates the constraint
-		// -> verify the diagnostic details, including severity, code, and message
-		// Ensure that you remove @generated or mark it @generated NOT
 		
 		double totalCredits = 0.0;
 		for(Course course : semester.getElective()) {
