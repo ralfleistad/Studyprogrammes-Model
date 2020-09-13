@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<studyprog:Faculty
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:studyprog="platform:/plugin/assignment.studyprog.model/model/studyprog.ecore"
+    xsi:schemaLocation="platform:/plugin/assignment.studyprog.model/model/studyprog.ecore studyprog.ecore">
+  <programmes
+      programmeName="Informatics"
+      neededCredits="120"
+      totalSemesters="4"
+      startYear="2020">
+    <specializations
+        specializationName="Software Engineering ">
+      <semesters
+          semesterNum="1">
+        <mandatory
+            courseName="Information Systems"
+            courseCode="TDT4175"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="O"/>
+        <mandatory
+            courseName="Software Architecture"
+            courseCode="TDT4240"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="O"/>
+      </semesters>
+      <semesters
+          semesterNum="2"/>
+      <semesters
+          semesterNum="3"/>
+      <semesters
+          semesterNum="4"/>
+    </specializations>
+  </programmes>
+</studyprog:Faculty>
