@@ -4,35 +4,45 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:studyprog="platform:/plugin/assignment.studyprog.model/model/studyprog.ecore"
-    xsi:schemaLocation="platform:/plugin/assignment.studyprog.model/model/studyprog.ecore studyprog.ecore">
+    xsi:schemaLocation="platform:/plugin/assignment.studyprog.model/model/studyprog.ecore ../../../../model/studyprog.ecore">
   <programmes
       programmeName="Informatics"
       neededCredits="120">
+    <semesters
+        semesterNum="1">
+      <mandatory
+          courseName="Information Systems"
+          courseCode="TDT4175"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+      <mandatory
+          courseName="Software Architecture"
+          courseCode="TDT4240"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+    </semesters>
+    <semesters
+        semesterNum="2"/>
+    <semesters
+        semesterNum="3"/>
+    <semesters
+        semesterNum="4"/>
+    <semesters
+        semesterNum="5"/>
+    <semesters
+        semesterNum="6"/>
     <specializations
         specializationName="Software Engineering ">
       <semesters
-          semesterNum="1">
-        <mandatory
-            courseName="Information Systems"
-            courseCode="TDT4175"
-            courseCredit="7.5"
-            courseDescription="lorem ipsum"
-            courseGroup="O"/>
-        <mandatory
-            courseName="Software Architecture"
-            courseCode="TDT4240"
-            courseCredit="7.5"
-            courseDescription="lorem ipsum"
-            courseGroup="O"/>
-      </semesters>
+          semesterNum="7"/>
       <semesters
-          semesterNum="2"/>
+          semesterNum="8"/>
       <semesters
-          semesterNum="3"/>
+          semesterNum="9"/>
       <semesters
-          semesterNum="4"/>
+          semesterNum="10"/>
     </specializations>
-    <semesters
-        semesterNum="5"/>
   </programmes>
 </studyprog:Faculty>
