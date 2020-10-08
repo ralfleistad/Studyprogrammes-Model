@@ -2,7 +2,6 @@ package assignment.studyprog.html;
 
 
 import java.io.IOException;
-import java.io.PrintStream;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -34,6 +33,7 @@ public class Studyprog2TextGeneratorMain {
 		
 		String html = new Studyprog2TextGenerator().generateHTML(fac);
 		System.out.println(html);
+
 	}
 
 	/*

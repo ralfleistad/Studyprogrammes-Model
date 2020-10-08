@@ -36,6 +36,7 @@ public class Studyprog2TextGenerator {
       _builder.newLine();
       _builder.append("<body>");
       _builder.newLine();
+      _builder.newLine();
       Studyprog2TextGenerator.operator_doubleLessThan(sb, _builder);
       final Consumer<Programme> _function = (Programme it) -> {
         this.generate(it, sb);
@@ -102,9 +103,83 @@ public class Studyprog2TextGenerator {
   }
   
   protected void _generate(final MandatoryCourse mand, final StringBuilder sb) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<div class=\"course\">");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<h3 id=\"");
+    String _courseCode = mand.getCourseCode();
+    _builder.append(_courseCode, "\t");
+    _builder.append("\">");
+    String _courseCode_1 = mand.getCourseCode();
+    _builder.append(_courseCode_1, "\t");
+    _builder.append(" ");
+    String _courseName = mand.getCourseName();
+    _builder.append(_courseName, "\t");
+    _builder.append("</h3>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("<p>");
+    String _courseDescription = mand.getCourseDescription();
+    _builder.append(_courseDescription, "\t");
+    _builder.append("</p>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("<p>Group: ");
+    String _courseGroup = mand.getCourseGroup();
+    _builder.append(_courseGroup, "\t");
+    _builder.append("</p>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("<p>Credits: ");
+    double _courseCredit = mand.getCourseCredit();
+    _builder.append(_courseCredit, "\t");
+    _builder.append("</p></br >");
+    _builder.newLineIfNotEmpty();
+    _builder.append("</div>");
+    _builder.newLine();
+    _builder.newLine();
+    Studyprog2TextGenerator.operator_doubleLessThan(sb, _builder);
   }
   
   protected void _generate(final ElectiveCourse elect, final StringBuilder sb) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("<div class=\"course\">");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("<h3 id=\"");
+    String _courseCode = elect.getCourseCode();
+    _builder.append(_courseCode, "\t");
+    _builder.append("\">");
+    String _courseCode_1 = elect.getCourseCode();
+    _builder.append(_courseCode_1, "\t");
+    _builder.append(" ");
+    String _courseName = elect.getCourseName();
+    _builder.append(_courseName, "\t");
+    _builder.append("</h3>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("<p>");
+    String _courseDescription = elect.getCourseDescription();
+    _builder.append(_courseDescription, "\t");
+    _builder.append("</p>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("<p>Group: ");
+    String _courseGroup = elect.getCourseGroup();
+    _builder.append(_courseGroup, "\t");
+    _builder.append("</p>");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("<p>Credits: ");
+    double _courseCredit = elect.getCourseCredit();
+    _builder.append(_courseCredit, "\t");
+    _builder.append("</p></br >");
+    _builder.newLineIfNotEmpty();
+    _builder.append("</div>");
+    _builder.newLine();
+    _builder.newLine();
+    Studyprog2TextGenerator.operator_doubleLessThan(sb, _builder);
   }
   
   public static StringBuilder operator_doubleLessThan(final StringBuilder stringBuilder, final Object o) {

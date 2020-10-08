@@ -24,6 +24,7 @@ class Studyprog2TextGenerator {
 	<meta charset="utf-8" />
 </head>
 <body>
+
 '''
 
 	fac.programmes.forEach[generate(it, sb)]
@@ -63,11 +64,27 @@ class Studyprog2TextGenerator {
 	}
 	
 	def dispatch void generate(MandatoryCourse mand, StringBuilder sb) {
+		sb << '''
+		<div class="course">
+			<h3 id="«mand.courseCode»">«mand.courseCode» «mand.courseName»</h3>
+			<p>«mand.courseDescription»</p>
+			<p>Group: «mand.courseGroup»</p>
+			<p>Credits: «mand.courseCredit»</p></br >
+		</div>
 		
+		'''
 	}
 	
 	def dispatch void generate(ElectiveCourse elect, StringBuilder sb) {
+		sb << '''
+		<div class="course">
+			<h3 id="«elect.courseCode»">«elect.courseCode» «elect.courseName»</h3>
+			<p>«elect.courseDescription»</p>
+			<p>Group: «elect.courseGroup»</p>
+			<p>Credits: «elect.courseCredit»</p></br >
+		</div>
 		
+		'''
 	}
 
 	// << operator
