@@ -38,7 +38,7 @@ class Studyprog2TextGenerator {
 	
 	def dispatch void generate(Programme programme, StringBuilder sb) {
 		sb << '''
-		<h1>«programme.programmeName»</h1>
+		<h1>Programme: «programme.programmeName»</h1>
 		'''
 		
 		programme.semesters.forEach[generate(it, sb)]
@@ -51,13 +51,18 @@ class Studyprog2TextGenerator {
 		<h2>Semester «semester.semesterNum»</h2>
 		'''
 		
+		sb << '''
+		<h3>Mandatory Courses</h3>'''
 		semester.mandatory.forEach[generate(it, sb)]
+		
+		sb << '''
+		<h3>Electivee Courses</h3>'''
 		semester.elective.forEach[generate(it, sb)]
 	}
 	
 	def dispatch void generate(Specialization specialization, StringBuilder sb) {
 		sb << '''
-		<h2>«specialization.specializationName»</h2>
+		<h2>Specialization: «specialization.specializationName»</h2>
 		'''
 		
 		specialization.semesters.forEach[generate(it, sb)]
@@ -66,7 +71,7 @@ class Studyprog2TextGenerator {
 	def dispatch void generate(MandatoryCourse mand, StringBuilder sb) {
 		sb << '''
 		<div class="course">
-			<h3 id="«mand.courseCode»">«mand.courseCode» «mand.courseName»</h3>
+			<h4 id="«mand.courseCode»">«mand.courseCode» «mand.courseName»</h4>
 			<p>«mand.courseDescription»</p>
 			<p>Group: «mand.courseGroup»</p>
 			<p>Credits: «mand.courseCredit»</p></br >
@@ -78,7 +83,7 @@ class Studyprog2TextGenerator {
 	def dispatch void generate(ElectiveCourse elect, StringBuilder sb) {
 		sb << '''
 		<div class="course">
-			<h3 id="«elect.courseCode»">«elect.courseCode» «elect.courseName»</h3>
+			<h4 id="«elect.courseCode»">«elect.courseCode» «elect.courseName»</h4>
 			<p>«elect.courseDescription»</p>
 			<p>Group: «elect.courseGroup»</p>
 			<p>Credits: «elect.courseCredit»</p></br >

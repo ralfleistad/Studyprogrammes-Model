@@ -54,7 +54,7 @@ public class Studyprog2TextGenerator {
   
   protected void _generate(final Programme programme, final StringBuilder sb) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<h1>");
+    _builder.append("<h1>Programme: ");
     String _programmeName = programme.getProgrammeName();
     _builder.append(_programmeName);
     _builder.append("</h1>");
@@ -78,10 +78,16 @@ public class Studyprog2TextGenerator {
     _builder.append("</h2>");
     _builder.newLineIfNotEmpty();
     Studyprog2TextGenerator.operator_doubleLessThan(sb, _builder);
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append("<h3>Mandatory Courses</h3>");
+    Studyprog2TextGenerator.operator_doubleLessThan(sb, _builder_1);
     final Consumer<MandatoryCourse> _function = (MandatoryCourse it) -> {
       this.generate(it, sb);
     };
     semester.getMandatory().forEach(_function);
+    StringConcatenation _builder_2 = new StringConcatenation();
+    _builder_2.append("<h3>Electivee Courses</h3>");
+    Studyprog2TextGenerator.operator_doubleLessThan(sb, _builder_2);
     final Consumer<ElectiveCourse> _function_1 = (ElectiveCourse it) -> {
       this.generate(it, sb);
     };
@@ -90,7 +96,7 @@ public class Studyprog2TextGenerator {
   
   protected void _generate(final Specialization specialization, final StringBuilder sb) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<h2>");
+    _builder.append("<h2>Specialization: ");
     String _specializationName = specialization.getSpecializationName();
     _builder.append(_specializationName);
     _builder.append("</h2>");
@@ -107,7 +113,7 @@ public class Studyprog2TextGenerator {
     _builder.append("<div class=\"course\">");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("<h3 id=\"");
+    _builder.append("<h4 id=\"");
     String _courseCode = mand.getCourseCode();
     _builder.append(_courseCode, "\t");
     _builder.append("\">");
@@ -116,7 +122,7 @@ public class Studyprog2TextGenerator {
     _builder.append(" ");
     String _courseName = mand.getCourseName();
     _builder.append(_courseName, "\t");
-    _builder.append("</h3>");
+    _builder.append("</h4>");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("<p>");
@@ -147,7 +153,7 @@ public class Studyprog2TextGenerator {
     _builder.append("<div class=\"course\">");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("<h3 id=\"");
+    _builder.append("<h4 id=\"");
     String _courseCode = elect.getCourseCode();
     _builder.append(_courseCode, "\t");
     _builder.append("\">");
@@ -156,7 +162,7 @@ public class Studyprog2TextGenerator {
     _builder.append(" ");
     String _courseName = elect.getCourseName();
     _builder.append(_courseName, "\t");
-    _builder.append("</h3>");
+    _builder.append("</h4>");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append("<p>");
