@@ -20,27 +20,6 @@ import assignment.studyprog.impl.StudyprogFactoryImpl;
 
 public class Studyprog2TextGeneratorMain {
 	
-	/*
-	public static void main(String[] args) throws IOException {
-		ResourceSet resSet = new ResourceSetImpl();
-		resSet.getPackageRegistry().put(StudyprogPackage.eNS_URI, StudyprogPackage.eINSTANCE);
-		resSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
-		Resource resource = resSet.getResource(URI.createURI(Example.class.getResource("Faculty.xmi").toString()), true);
-		
-		Faculty fac = null;
-		for (EObject eObj : resource.getContents()) {
-			if(eObj instanceof Faculty) {
-				fac = (Faculty) eObj;
-			}
-		}
-		
-		String html = new Studyprog2TextGenerator().generateHTML(fac);
-		System.out.println(html);
-
-	}
-	*/
-
-	
 	public static void main(String[] args) throws IOException {
 		
 		Faculty fac = getFaculty("Faculty.xmi");
@@ -63,7 +42,7 @@ public class Studyprog2TextGeneratorMain {
 		ResourceSet resSet = new ResourceSetImpl();
 		resSet.getPackageRegistry().put(StudyprogPackage.eNS_URI, StudyprogPackage.eINSTANCE);
 		resSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put("xmi", new XMIResourceFactoryImpl());
-		Resource res = resSet.getResource(URI.createURI(Example.class.getResource("Faculty.xmi").toString()), true);
+		Resource res = resSet.getResource(URI.createURI(Example.class.getResource(uriString).toString()), true);
 		
 		for(EObject eObj : res.getContents()) {
 			if(eObj instanceof Faculty) {
