@@ -4,12 +4,298 @@
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:studyprog="platform:/plugin/assignment.studyprog.model/model/studyprog.ecore"
-    xsi:schemaLocation="platform:/plugin/assignment.studyprog.model/model/studyprog.ecore studyprog.ecore">
+    xsi:schemaLocation="platform:/plugin/assignment.studyprog.model/model/studyprog.ecore ../../../../model/studyprog.ecore">
   <programmes
-      programmeName="Informatics"
-      neededCredits="120">
+      programmeName="Datateknologi"
+      neededCredits="300"
+      totalSemesters="10"
+      startYear="2020">
+    <semesters
+        semesterNum="1">
+      <mandatory
+          courseName="Exphil"
+          courseCode="EXPH0004"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+      <mandatory
+          courseName="Informasjonsteknologi, grunnkurs"
+          courseCode="TDT4110"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+      <mandatory
+          courseName="Matematikk 1"
+          courseCode="TMA4100"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+      <mandatory
+          courseName="Diskret Matematikk"
+          courseCode="TMA4140"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+    </semesters>
+    <semesters
+        semesterNum="2">
+      <mandatory
+          courseName="OOP"
+          courseCode="TDT4100"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+      <mandatory
+          courseName="Menneskemaskin-interaksjon"
+          courseCode="TDT4180"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+      <mandatory
+          courseName="Krets- og digitalteknikk"
+          courseCode="TFE4101"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+      <mandatory
+          courseName="Matematikk 3"
+          courseCode="TMA4115"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+    </semesters>
+    <semesters
+        semesterNum="3">
+      <mandatory
+          courseName="Informatikk prosjektarbeid I"
+          courseCode="IT1901"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+      <mandatory
+          courseName="Algoritmer og datastrukturer"
+          courseCode="TDT4120"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+      <mandatory
+          courseName="Datamaskiner og digitalteknikk"
+          courseCode="TDT4160"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+      <mandatory
+          courseName="Statistikk"
+          courseCode="TMA4240"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+    </semesters>
+    <semesters
+        semesterNum="4">
+      <mandatory
+          courseName="Datateknologi, programmeringsprosjekt"
+          courseCode="TDT4113"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+      <mandatory
+          courseName="Programvareutvikling"
+          courseCode="TDT4140"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+      <mandatory
+          courseName="Datamodellering og databasesystemer"
+          courseCode="TDT4145"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+      <mandatory
+          courseName="Kommunikasjon - Tjenester og nett"
+          courseCode="TTM4100"
+          courseCredit="7.5"
+          courseDescription="lorem ipsum"
+          courseGroup="O"/>
+    </semesters>
     <specializations
-        specializationName="Software Engineering ">
+        specializationName="Programvaresystemer">
+      <semesters
+          semesterNum="5">
+        <mandatory
+            courseName="Introduksjon til kunstig intelligens"
+            courseCode="TDT4136"
+            courseDescription="lorem ipsum"
+            courseGroup="O"/>
+        <mandatory
+            courseName="Informasjonssystemer"
+            courseCode="TDT4175"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="O"/>
+        <mandatory
+            courseName="Matematikk 4D"
+            courseCode="TMA4135"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="O"/>
+        <elective
+            courseName="Webutvikling"
+            courseCode="IT2810"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VA"/>
+        <elective
+            courseName="Informasjonsgjenfinning"
+            courseCode="TDT4117"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VA"/>
+      </semesters>
+      <semesters
+          semesterNum="6">
+        <mandatory
+            courseName="Operativsystemer"
+            courseCode="TDT4186"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="O"/>
+        <mandatory
+            courseName="Programvarearkitektur"
+            courseCode="TDT4240"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="O"/>
+        <mandatory
+            courseName="Fysikk"
+            courseCode="TFY4125"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="O"/>
+        <mandatory
+            courseName="Teknologiledelse"
+            courseCode="TIØ4252"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="O"/>
+      </semesters>
+      <semesters
+          semesterNum="7">
+        <mandatory
+            courseName="Kundestyrt prosjekt"
+            courseCode="TDT4290"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="O"/>
+        <elective
+            courseName="Design av grafiske brukergrensesnitt"
+            courseCode="IT3402"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VA"/>
+        <elective
+            courseName="Avansert programvaredesign"
+            courseCode="TDT4250"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VA"/>
+        <elective
+            courseName="Virksomhets-arkitektur og -innovasjon"
+            courseCode="TDT4252"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VA"/>
+        <elective
+            courseName="Anvendt data science"
+            courseCode="TDT4259"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VA"/>
+      </semesters>
+      <semesters
+          semesterNum="8">
+        <elective
+            courseName="Deltagende design"
+            courseCode="IT3022"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VA"/>
+        <elective
+            courseName="Programvaresikkerhet og personvern"
+            courseCode="TDT4237"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VA"/>
+        <elective
+            courseName="Avansert programvareutvikling"
+            courseCode="TDT4242"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VA"/>
+        <elective
+            courseName="Samhandlingsteknologi og sosiale medier"
+            courseCode="TDT4245"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VA"/>
+        <elective
+            courseName="Digital tjenesteinnovasjon"
+            courseCode="TDT4257"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VA"/>
+      </semesters>
+      <semesters
+          semesterNum="9">
+        <mandatory
+            courseName="Datateknologi, fordypningsprosjekt"
+            courseCode="TDT4501"
+            courseCredit="15.0"
+            courseDescription="lorem ipsum"
+            courseGroup="O"/>
+        <mandatory
+            courseName="Datateknologi, fordypningsemne"
+            courseCode="TDT4506"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="O"/>
+        <elective
+            courseName="Technology for a Good Society"
+            courseCode="FI5206"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VB"/>
+        <elective
+            courseName="Bioteknologi og etikk"
+            courseCode="FI3107"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VB"/>
+        <elective
+            courseName="Arkitektur som teknologisk praksis"
+            courseCode="AAR4250"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VB"/>
+      </semesters>
+      <semesters
+          semesterNum="10">
+        <mandatory
+            courseName="Datateknologi, masteroppgave"
+            courseCode="TDT4900"
+            courseCredit="30.0"
+            courseDescription="lorem ipsum"
+            courseGroup="O"/>
+      </semesters>
+    </specializations>
+  </programmes>
+  <programmes
+      programmeName="Informatikk"
+      neededCredits="120"
+      totalSemesters="4"
+      startYear="2020">
+    <specializations
+        specializationName="Programvaresystemer">
       <semesters
           semesterNum="1">
         <mandatory
@@ -19,20 +305,111 @@
             courseDescription="lorem ipsum"
             courseGroup="O"/>
         <mandatory
+            courseName="Advanced Software Design"
+            courseCode="TDT4250"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="M2A"/>
+        <mandatory
+            courseName="Enterprise Architecture for Enterprise Innovation"
+            courseCode="TDT4252"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="M2A"/>
+        <mandatory
+            courseName="Applied Data Science"
+            courseCode="TDT4259"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="M2A"/>
+        <elective
+            courseName="User Interface Design"
+            courseCode="IT3402"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VA"/>
+        <elective
+            courseName="Programming Languages"
+            courseCode="TDT4165"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VB"/>
+        <elective
+            courseName="Information Retrieval"
+            courseCode="TDT4117"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VB"/>
+      </semesters>
+      <semesters
+          semesterNum="2">
+        <mandatory
             courseName="Software Architecture"
             courseCode="TDT4240"
             courseCredit="7.5"
             courseDescription="lorem ipsum"
             courseGroup="O"/>
+        <mandatory
+            courseName="Empirical research methodologies in IT and digitalization"
+            courseCode="IT3010"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="O"/>
+        <mandatory
+            courseName="Software Security and Data Privacy"
+            courseCode="TDT4237"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="M1A"/>
+        <mandatory
+            courseName="Digital Service Innovation"
+            courseCode="TDT4257"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="M1A"/>
+        <mandatory
+            courseName="Advanced Software Engineering"
+            courseCode="TDT4242"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="M1A"/>
       </semesters>
       <semesters
-          semesterNum="2"/>
+          semesterNum="3">
+        <mandatory
+            courseName="Master in Informatics, Preparatory Project"
+            courseCode="IT3915"
+            courseCredit="15.0"
+            courseDescription="lorem ipsum"
+            courseGroup="O"/>
+        <elective
+            courseName="Current Topics in Informatics"
+            courseCode="IT3020"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VA"/>
+        <elective
+            courseName="Game+"
+            courseCode="IT3021"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VA"/>
+        <elective
+            courseName="Learning Technology and Analytics"
+            courseCode="IT3023"
+            courseCredit="7.5"
+            courseDescription="lorem ipsum"
+            courseGroup="VA"/>
+      </semesters>
       <semesters
-          semesterNum="3"/>
-      <semesters
-          semesterNum="4"/>
+          semesterNum="4">
+        <mandatory
+            courseName="Master Thesis for MSIT"
+            courseCode="IT3920"
+            courseCredit="30.0"
+            courseDescription="lorem ipsum"
+            courseGroup="O"/>
+      </semesters>
     </specializations>
-    <semesters
-        semesterNum="5"/>
   </programmes>
 </studyprog:Faculty>
