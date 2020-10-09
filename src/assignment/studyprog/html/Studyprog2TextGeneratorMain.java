@@ -3,6 +3,7 @@ package assignment.studyprog.html;
 
 import java.io.IOException;
 import java.io.PrintStream;
+import java.nio.file.Paths;
 
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
